@@ -1,71 +1,82 @@
-*{
+* {
     padding: 0;
     margin: 0;
+    box-sizing: border-box; /* Crucial para que el padding no estire la caja */
     font-family: 'Times New Roman', Times, serif;
 }
-body{
+
+body {
     height: 100vh;
-    background: rgb(48, 19, 153);
+    background: purple;
     padding: 30px;
 }
-.container{
+
+.container {
     height: 100%;
-    background: rgb(74, 59, 160);
+    background: black;
     color: aliceblue;
-    border-radius: 4%;
+    border-radius: 15px; /* Bordes más finos como la imagen 1 */
+    display: flex;
+    flex-direction: column; /* Apila header e inicio */
+    overflow: hidden;
 }
 
-header{
-    padding: 40px;
+header {
+    padding: 30px 60px;
     display: flex;
     justify-content: space-between;
-    background: rgb(122, 27, 199);
-    border-radius: 8px;
-}
-
-.logo{
-    font-size: 26px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    color: aliceblue;
-    text-decoration: none;
-}
-.logo:hover{
-    transform: scale(1.5);
-    color: red;
-}
-
-.inicio {
-    display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 100px;
-    padding: 100px 5% 0;
+    background: rgb(48, 4, 41);
 }
+
+/* --- AQUÍ ESTÁ EL ARREGLO PARA EL CENTRADO --- */
+.inicio {
+    flex: 1;                /* Ocupa todo el alto disponible */
+    display: flex;
+    align-items: center;    /* Centra verticalmente */
+    justify-content: flex-start; /* Alinea el contenido a la izquierda como Claudio */
+    padding: 0 10%;         /* Da espacio a los lados */
+}
+
+.inicio-detalle {
+    max-width: 600px;       /* EVITA QUE LA LETRA SE ESTIRE HACIA LA DERECHA */
+    text-align: left;       /* Alineado a la izquierda como la referencia */
+}
+
 .inicio-detalle h1 {
-    font-size: 44px;
-    background: rgb(20, 112, 1);
-    background-clip: text;
-    color: transparent;
+    font-size: 55px;        /* Más grande como el de Claudio */
+    color: #2c7a7b;         /* Color verde azulado de la imagen */
+    line-height: 1.1;
+    margin-bottom: 10px;
 }
+
 .inicio-detalle h2 {
-    font-size: 18px;
-    color: rgb(33, 169, 173);
-    margin-bottom: 15px;
+    font-size: 20px;
+    color: #38b2ac;
+    margin-bottom: 25px;
 }
+
 .inicio-detalle p {
-    margin: 20px 0;
+    margin-bottom: 30px;
     line-height: 1.6;
-    font-size: 1rem;
-    color: rgba(255,255,255);
+    font-size: 1.1rem;
+    color: #e2e8f0;
+    word-wrap: break-word;  /* Corta las letras seguidas como "aaaaa" */
 }
+
 .btn {
     display: inline-block;
     padding: 12px 28px;
-    background: purple;
-    border: 3px solid;
+    background: transparent;
+    border: 2px solid purple;
     border-radius: 40px;
-    color: beige;
+    color: purple;
     text-decoration: none;
     font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: purple;
+    color: white;
 }

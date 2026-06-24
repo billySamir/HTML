@@ -77,6 +77,7 @@ const enviarWhatsApp = () => {
 
     try {
       const templateParams = {
+        to_email: formData.email,
         from_name: formData.nombre,
         from_email: formData.email,
         dni: formData.dni || 'No especificado',
